@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Async Command Queue</title>
+	<p>
+		All in the console
+	</p>
+	<script type="text/javascript">
+        (function(win, doc, tag, url, obj, s) {
+            // store the object
+            win['LibraryObject'] = obj;
+            // implement the q
+            win[obj] = win[obj] || function() {
+                (win[obj].q = win[obj].q || []).push(arguments);
+            };
+            // create the script and inject into head
+            n = document.getElementsByTagName(tag)[0];
+            s = doc.createElement(tag);
+            s.sync = 1;
+            s.src = url;
+            n.parentNode.insertBefore(s, n);
+        })(window, document, 'script', 'library.js', 'library');
+    </script>
+</head>
+
+<body>
+	<script>
+        library('config', {
+            apiKey: 'AA-AAAAA-AAA'
+        });
+
+        library('capture', 'Tea father?');
+
+        library('dance', 'dance with me');
+    </script>
+</body>
+
+</html>
